@@ -20,4 +20,5 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include('ticketing.urls'))
+    #TO-DO: have more granular way of providing urls to projects/sprints/issues URLs
 ]

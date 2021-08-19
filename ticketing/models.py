@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here
 class Project(models.Model):
+    '''Porject provides a way to link issues'''
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
     owner = models.CharField(max_length=50)
@@ -13,6 +14,7 @@ class Project(models.Model):
 
 # Create your models here
 class Sprint(models.Model):
+    '''Sprint model to handle sprints associated with Project'''
     start = models.DateField()
     end = models.DateField()
     name = models.CharField(max_length=50)
@@ -23,6 +25,7 @@ class Sprint(models.Model):
 
 
 class Issue(models.Model):
+    '''Issue/Story/Epic/Task support model'''
     IssueStatus = models.TextChoices("IssueStatus", "Open InProgress CodeReview Completed Close")
     IssueType = models.TextChoices("IssueType", "Issue Story Epic Task")
 
